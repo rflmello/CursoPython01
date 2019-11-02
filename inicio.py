@@ -17,3 +17,10 @@ print('O resultado foi: ' + str(divisao))
 #print(f'A soma de {numero} + {numero2} é: {soma}')
 print('Olá, Python')
 print(47)
+
+
+#print(f'nome: {}'.format(nome))
+#print(f'sobrenome: {}'.format(sobrenome))
+#print(f'Data de Nascimento: {}'.format(data_nascimento))
+#print(f'email: {}'.format(email))
+#print(f'senha: {}'.format(senha))
