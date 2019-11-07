@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>{{nome}}</title>
+        <link rel="stylesheet" href="../static/css/estilo.css">
+    </head>
+    <body>
+        <h1>Olá Mundo!</h1>
+        <a href="http:/contato">Contato</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Usuário</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in lista%}
+                 <tr>
+                    <td>{{a.nome}}</td>
+                    <td>{{a.sobrenome}}</td>
+                    <td>{{a.usuario}}</td>
+                    <td>{{a.senha}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Nome avaliação</th>
+                        <th>Nota</th>
+                     </tr>
+                </thead>
+                <tbody>
+                    {% for a in lista2%}
+                     <tr>
+                        <td>{{a.data}}</td>
+                        <td>{{a.nome_avaliacao}}</td>
+                        <td>{{a.nota}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+
+        {% for a in lista%}
+            <p>{{a}}</p>
+        {% endfor %}
+
+
+
+
+
+    </body>
+</html>
