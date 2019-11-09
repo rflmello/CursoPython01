@@ -1,3 +1,4 @@
+"""
 class Aluno:
     
     nome = ''
@@ -11,10 +12,10 @@ class Aluno:
         self.usuario = input('Digite seu usuário: ')
         self.senha = input('Digite sua senha: ')
         return f'Nome: {self.nome} Sobrenome: {self.sobrenome} Usuário: {self.usuario} Senha: {self.senha}'
-
-#class Aluno:
-#    def __init__(self):
-#        self.nome = ''
-#        self.sobrenome = ''
-#        self.usuario = ''
-#        self.senha = ''
+"""
+class Aluno:
+    def __init__(self, nome, sobrenome, usuario, senha):
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.usuario = usuario
+        self.senha = senha

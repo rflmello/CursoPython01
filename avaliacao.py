@@ -1,3 +1,4 @@
+"""
 class Avaliacao:
     
     data = ''
@@ -9,3 +10,11 @@ class Avaliacao:
         self.nome_avaliacao = input('Digite o nome da avaliação: ')
         self.nota = input('Digite sua nota: ')
         return f'Data: {self.data} Nome avaliação: {self.nome_avaliacao} Nota: {self.nota}'
+"""
+
+class Avaliacao:
+    def __init__(self, data, nome_avaliacao, nota):
+        self.data = data
+        self.nome_avaliacao = nome_avaliacao
+        self.nota = nota
+
