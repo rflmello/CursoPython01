@@ -5,7 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    return render_template('index.html', nome_pagina = nome_pagina)
+    lista_cervejas = []
+    with open('cervejas.txt','r') as arquivo:
+        for l in arquivo:
+            vetor = l.split(';')
+            lista_cervejas.append(vetor)
+            #nome = vetor [0]
+            #nome = vetor [1]
+            #nome = vetor [2]
+    return render_template('index.html', nome_pagina = nome_pagina, lista = lista_cervejas)
 
 @app.route('/cadastrar')
 def cadastrar():
@@ -17,7 +25,7 @@ def salvar():
     tipo = request.args["Tipo"]
     teor = request.args["Teor"]
     with open('cervejas.txt','a') as arq :
-        arq.write(f'{nome};{tipo};{teor}')
+        arq.write(f'{nome};{tipo};{teor}\n')
     return 'salvo '
 
 app.run(debug=True)

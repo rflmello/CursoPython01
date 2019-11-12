@@ -1,0 +1,3 @@
+Cerveja 1;Tipo 1;1
+cerveja 2;Tipo 2;2
+cerveja 3;Tipo 3;3
