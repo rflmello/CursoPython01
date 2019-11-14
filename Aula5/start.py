@@ -6,12 +6,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    lista_carros = []
-    with open('Aula5/veiculos.txt','r') as arquivo:
-        for l in arquivo:
-            vetor = l.split(';')
-            lista_carros.append(vetor)
-    return render_template('index.html', nome_pagina = nome_pagina, lista = lista_carros)
+    
+#    lista_carros = []
+#    with open('Aula5/veiculos.txt','r') as arquivo:
+#        for l in arquivo:
+#            vetor = l.split(';')
+#            lista_carros.append(vetor)
+    carro = Carro()
+    return render_template('index.html', nome_pagina = nome_pagina, lista = carro.lista_todos())
 
 
 @app.route('/cadastrar')
@@ -26,8 +28,7 @@ def salvar():
     ano = request.args["ano"]
 
     carro = Carro(marca, modelo, categoria, ano)
-    with open('Aula5/veiculos.txt','a') as arq :
-        arq.write(f'{carro.marca};{carro.modelo};{carro.categoria};{carro.ano}\n')
+    carro,cadastrar(carro)
     return redirect('/')
 
 app.run()
