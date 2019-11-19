@@ -1,9 +1,13 @@
 from flask_mysqldb import MySQLdb
+from cliente import Cliente
 
-conexao = MySQL.connect(host='mysql.zuplae.com', user='zuplae04',passwd='lendas19',database='zupla04')
-cur = conexao.cursos()
+conexao = MySQLdb.connect(host='mysql.zuplae.com', user='zuplae04',passwd='lendas19',database='zuplae04')
+cur = conexao.cursor()
 
-cur.execute('SELECT * FROM Cliente')
-
-for c in cur.fetchall():
-    print(c)
+cur.execute('SELECT ID, NOME, CPF, DATA_NASCIMENTO FROM Cliente')
+lista_resultado = cur.fetchall()
+lista_clientes = []
+for c in lista_resultado:
+    cliente = Cliente(c[0], c[1], c[2], c[3] )
+    lista_clientes.append(cliente)
+    print(cliente.__dict__)
